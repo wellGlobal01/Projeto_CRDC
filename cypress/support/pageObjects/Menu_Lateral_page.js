@@ -8,6 +8,7 @@ class PageHome {
 
  AbrirBrowser(){
     cy.visit(ambiente);
+    cy.clearCookies()
  }
 
  PreencherCampos(){

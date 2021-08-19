@@ -24,6 +24,7 @@ class Cadastro{
     ValidarBtnImprimir = () => {return ':nth-child(3) > .q-btn__wrapper > .q-btn__content > .block'}
     btn_Concluir = () => {return '.q-btn--standard > .q-btn__wrapper'}
     ValidarMensagemSucess = () => {return '.q-notification__message'}
-
+    ValidarPrimeiroAcesso = () => {return '.q-stepper__step-inner'}
+    BotaoContinuarPrimeiroAcesso = () => {return '.flex > .q-btn--standard > .q-btn__wrapper'}
 }
 export default Cadastro;
