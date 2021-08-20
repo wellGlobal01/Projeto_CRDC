@@ -12,4 +12,5 @@ Given(/^que o user iniciou o login e o sistema tenha disponibilizado os termos p
 Then(/^o sistema apresenta o download dos documentos de Termo de Uso e Política de Privacidade$/, () => {
     page.ValidarImpressao();
     page.ValidarImpressaoTermosDeUso();
+    page.ValidarImpressaoTermosDeUso();
 });

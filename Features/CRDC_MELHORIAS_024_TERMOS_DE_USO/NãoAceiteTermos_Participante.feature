@@ -6,5 +6,4 @@ Funcionalidade: Não aceite termos de uso
       Quando o Sistema identificar que o mesmo não realizou o aceite dos termos   
       Então usuário é impedido de ingressar na aplicação
 
-
-           
+        

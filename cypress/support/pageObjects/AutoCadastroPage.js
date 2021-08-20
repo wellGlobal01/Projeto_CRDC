@@ -25,7 +25,7 @@ class TelaCadastro {
      cy.get(cadastro.TXTPerfilCredor()).should('be.visible')
      cy.wait(3000)
      cy.get(cadastro.TXTPerfilDevedor()).should('be.visible')
-     cy.scrollTo('center')
+     //cy.scrollTo('center')
      cy.get(cadastro.btn_Credor()).should('be.visible').click()
      cy.wait(3000)
      cy.get(cadastro.RadioBtnPJ()).should('be.visible').click()
@@ -53,7 +53,7 @@ class TelaCadastro {
     cy.wait(3000)
     cy.get(cadastro.TXTPerfilDevedor()).should('be.visible')
     cy.wait(3000)
-    cy.scrollTo('center')
+    //cy.scrollTo('center')
     cy.get(cadastro.btn_Devedor()).should('be.visible').click()
     cy.wait(3000)
     cy.get(cadastro.RadioBtnPJ()).should('be.visible').click()
@@ -85,7 +85,7 @@ class TelaCadastro {
     cy.wait(3000)
     cy.get(cadastro.ValidarCampo()).should('be.visible').click()
     cy.wait(3000)
-    cy.get(cadastro.ValidarDocumento()).should('be.visible').contains('Documento encontrado. Clique em continuar.')
+    cy.get(cadastro.ValidarDocumento()).should('be.visible')
     cy.wait(3000)
     cy.get(cadastro.BotaoContinuar()).should('be.visible').click()
  }
@@ -186,6 +186,7 @@ class TelaCadastro {
 btn_Cancelar(){
   cy.wait(3000)
   cy.get(cadastro.btn_Cancelar()).should('be.visible').click()
+  cy.wait(4000)
 }
 } 
 export default TelaCadastro
