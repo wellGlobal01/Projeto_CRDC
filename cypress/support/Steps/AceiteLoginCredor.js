@@ -20,5 +20,8 @@ Then(/^deve ser disponibilizado a leitura e o aceite do documento de Termos de U
     cadastro.clicarContinuar();
     cadastro.ValidarTermosDeUso();
     cadastro.clicarContinuar();
+    cadastro.ValidarTermosDeUso();
+    cadastro.clicarContinuar();
+    cadastro.TempoEspera();
 });
  

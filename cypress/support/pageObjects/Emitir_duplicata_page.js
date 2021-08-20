@@ -6,6 +6,8 @@ const preencher = new PreencherUser
 const ambiente = Cypress.config("baseUrl")
 const Fileinput = '.q-uploader__input'
 const fixtureFile= '35210566079609000106550060002905911146267253.xml'
+const user = Cypress.env('usuario')
+const password = Cypress.env('senha')
 class PageDuplicata {
 
  AbrirBrowser(){
@@ -14,27 +16,29 @@ class PageDuplicata {
  }
 
  PreencherCampos(){
-  cy.get(preencher.Usuario()).type('234.897.630-76')
-  cy.get(preencher.Senha()).type('Abcd1234@')
+  cy.get(preencher.Usuario()).type(user)
+  cy.wait(1000)
+  cy.get(preencher.Senha()).type(password)
+  cy.wait(1000)
   cy.get(preencher.BotaoEntrar()).should('contain', 'Entrar').click()
  }
  
  Menu_User(){
 
-   cy.wait(5)
+   cy.wait(1000)
    cy.get(preencher.clicar_Perfil()).click()
-   cy.wait(5)
+   cy.wait(1000)
    cy.get(preencher.CampoMenu()).contains("Credor").click()
    cy.wait(1000)
    cy.wait(5)
    cy.get(preencher.clicar_Emitir()).click()
-   cy.wait(5000)
+   cy.wait(1000)
    cy.get(Fileinput).attachFile(fixtureFile);
    //cy.get(preencher.Emitir()).contains('Emitir').click()
    
  } 
 Tempo(){
-    cy.wait(1)
+    cy.wait(1000)
     cy.contains('Emitir').dblclick()
     cy.get('.bg-primary > .q-btn__wrapper').click()
     cy.wait(2000)

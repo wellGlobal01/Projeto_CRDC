@@ -16,5 +16,8 @@ class PreencherUser{
   MenuConsultaERelatorios = () => {return '[style=""] > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label'}
   clicar_Carregar_duplicatas = () => {return '.q-uploader__header > .column > .q-btn > .q-btn__wrapper > .q-btn__content'}
   Emitir = () => {'.bg-primary > .q-btn__wrapper > .q-btn__content > .block'}
+  btn_Generico_Politicas_Privacidade = () => {return '.q-mt-sm > .q-btn__wrapper'}
+  btn_Generico_Termos_de_uso = () => {return ':nth-child(6) > .q-btn__wrapper'}
+
 
 }export default PreencherUser;

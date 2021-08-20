@@ -3,6 +3,8 @@
 import PreencherUser from "../Elementos/ElementosHome";
 const preencher = new PreencherUser
 const ambiente = Cypress.config("baseUrl")
+const User = Cypress.env('usuario')
+const password = Cypress.env('senha')
 
 class PageHome {
 
@@ -12,9 +14,10 @@ class PageHome {
  }
 
  PreencherCampos(){
-  cy.get(preencher.Usuario()).type('234.897.630-76')
-  cy.get(preencher.Senha()).type('Abcd1234@')
+  cy.get(preencher.Usuario()).type(User)
+  cy.get(preencher.Senha()).type(password)
   cy.get(preencher.BotaoEntrar()).should('contain', 'Entrar').click()
+  cy.wait(3000)
  }
  
  Menu_User(){
@@ -22,7 +25,7 @@ class PageHome {
    cy.get(preencher.clicar_Perfil()).click()
    cy.wait(5)
    cy.get(preencher.CampoMenu()).contains("Credor").click()
-   cy.wait(1000)
+   cy.wait(3000)
  } 
 
  Perfil_User(){
@@ -32,9 +35,9 @@ class PageHome {
 
  Trocar_perfil(){
     cy.get(preencher.clicar_Perfil()).click()
-    cy.wait(10)
-    cy.contains("Paulistano").click()
     cy.wait(1000)
+    cy.contains("Paulistano").click()
+    cy.wait(3000)
  }
 
  Evidencia(){
@@ -45,7 +48,7 @@ class PageHome {
    cy.get(preencher.clicar_Perfil()).click()
    cy.wait(5)
    cy.get(preencher.CampoMenu()).contains("Administrador").click()
-   cy.wait(1000)
+   cy.wait(3000)
  }
 
  ValidarSubMenusCamposCredor(){
@@ -69,6 +72,41 @@ ValidarSubMenusCamposADM(){
    cy.screenshot()
 }
 
+ValidarDoc_Generico_Privacidade(){
+   cy.wait(3000)
+   cy.get(preencher.btn_Generico_Politicas_Privacidade()).should('be.visible').click()
+   cy.wait(3000)
+   cy.request({
+      method: 'GET',
+      url: 'https://hom.escrituracao.crdc.com.br/privacy-terms-of-use.pdf'
+    }).then((response) => {
+      expect(response.status).to.equal(200);
+    })
+    cy.wait(3000)
+}
 
+ValidarDoc_Generico_TermosUso(){
+   cy.get(preencher.btn_Generico_Termos_de_uso()).should('be.visible').click()
+   cy.wait(3000)
+   cy.request({
+      method: 'GET',
+      url: 'https://hom.escrituracao.crdc.com.br/terms-of-use.pdf'
+    }).then((response) => {
+      expect(response.status).to.equal(200);
+    })
+    cy.wait(3000)
+}
 
+Logar_novamente(){
+   cy.wait(2000)
+   cy.get(preencher.BotaoEntrar()).should('contain', 'Entrar').click()
+   cy.wait(3000)
+   cy.request({
+      method: 'GET',
+      url: 'https://api-hom.escrituracao.crdc.com.br/v1/auth/terms?type=privacy'
+    }).then((response) => {
+      expect(response.status).to.equal(200);
+    })
+    cy.wait(3000)
+ }
 }export default PageHome

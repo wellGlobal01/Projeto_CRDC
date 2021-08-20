@@ -4,8 +4,12 @@
     "viewportHeight": 900,
     "defaultCommandTimeout": 30000,
     "projectId": "rwhgdv",
+    "reporter" : "mochawesome",
 
-    "reporter" : "mochawesome"
+    "env":{
+        "usuario":"234.897.630-76" ,
+        "senha":"Abcd1234@"
+  }
      
     
 }
