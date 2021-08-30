@@ -5,7 +5,7 @@ import 'cypress-file-upload'
 const preencher = new PreencherUser
 const ambiente = Cypress.config("baseUrl")
 const Fileinput = '.q-uploader__input'
-const fixtureFile= '35210725126358000196550010002331001002489101.xml'
+const fixtureFile= '35210566079609000106550060002905911146267253.xml'
 const user = Cypress.env('usuario')
 const password = Cypress.env('senha')
 class PageDuplicata {
@@ -32,14 +32,13 @@ class PageDuplicata {
    cy.wait(1000)
    cy.wait(5)
    cy.get(preencher.clicar_Emitir()).click()
-   cy.wait(5000)
-   cy.get(Fileinput).should('be.visible')
    cy.wait(1000)
+   cy.reload(true)
+   //cy.get(Fileinput).should('be.visible')
+   cy.wait(3000)
    cy.get(Fileinput).attachFile(fixtureFile);
-   cy.wait(1000)
+   cy.wait(4000)
    cy.get(preencher.clicar_Carregar_duplicatas()).click()
-   cy.wait(10000)
-   //cy.get(preencher.Emitir()).contains('Emitir').click()
    
  } 
 
