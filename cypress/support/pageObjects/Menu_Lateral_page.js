@@ -1,4 +1,4 @@
-///reference types = "Cypress" />
+///reference types = 'Cypress' />
 
 import PreencherUser from "../Elementos/ElementosHome";
 const preencher = new PreencherUser
@@ -94,7 +94,7 @@ ValidarDoc_Generico_TermosUso(){
     }).then((response) => {
       expect(response.status).to.equal(200);
     })
-    cy.wait(3000)
+    cy.wait(2000)
 }
 
 Logar_novamente(){

@@ -5,7 +5,7 @@ import 'cypress-file-upload'
 const preencher = new PreencherUser
 const ambiente = Cypress.config("baseUrl")
 const Fileinput = '.q-uploader__input'
-const fixtureFile= '35210566079609000106550060002905911146267253.xml'
+const fixtureFile= '35210725126358000196550010002331001002489101.xml'
 const user = Cypress.env('usuario')
 const password = Cypress.env('senha')
 class PageDuplicata {
@@ -32,19 +32,23 @@ class PageDuplicata {
    cy.wait(1000)
    cy.wait(5)
    cy.get(preencher.clicar_Emitir()).click()
+   cy.wait(5000)
+   cy.get(Fileinput).should('be.visible')
    cy.wait(1000)
    cy.get(Fileinput).attachFile(fixtureFile);
+   cy.wait(1000)
+   cy.get(preencher.clicar_Carregar_duplicatas()).click()
+   cy.wait(10000)
    //cy.get(preencher.Emitir()).contains('Emitir').click()
    
  } 
-Tempo(){
-    cy.wait(1000)
-    cy.contains('Emitir').dblclick()
-    cy.get('.bg-primary > .q-btn__wrapper').click()
-    cy.wait(2000)
-    cy.get('.column > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
-    cy.wait(2000)
-    cy.get('.bg-primary > .q-btn__wrapper').click()
-}
 
-}export default PageDuplicata
+ Finalizar_emitir(){ 
+  cy.get(preencher.btn_emitir()).click()
+  cy.wait(1000)
+  cy.get(preencher.ValidarNotificacao()).should('be.visible')
+  cy.wait(3000)
+ }
+
+}
+export default PageDuplicata

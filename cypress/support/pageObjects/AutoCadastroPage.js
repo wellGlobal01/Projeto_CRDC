@@ -30,21 +30,21 @@ class TelaCadastro {
      cy.wait(3000)
      cy.get(cadastro.RadioBtnPJ()).should('be.visible').click()
      cy.wait(3000)
-     cy.get(cadastro.GerarCPF()).should('be.visible').type(CNPJ.generate())
+     cy.get(cadastro.GerarCPF()).should('be.visible').type(CNPJ.generate() , {delay : 2000})
      cy.wait(3000)
      cy.get(cadastro.ValidarCampo()).should('be.visible').click()
      cy.wait(3000)
-     cy.get(cadastro.CampoCPF()).should('be.visible').type('04385040')
+     cy.get(cadastro.CampoCPF()).should('be.visible').type('04385040', {delay : 2000})
      cy.wait(3000)
      cy.get(cadastro.ValidarCampo()).should('be.visible').click()
      cy.wait(3000)
-     cy.get(cadastro.CampoCEP()).should('be.visible').type('4555')
+     cy.get(cadastro.CampoCEP()).should('be.visible').type('4555', {delay : 2000})
      cy.wait(3000)
-     cy.get(cadastro.CampoRazaoSocial()).should('be.visible').type('Empresa Credor')
+     cy.get(cadastro.CampoRazaoSocial()).should('be.visible').type('Empresa Credor', {delay : 2000})
      cy.wait(3000)
-     cy.get(cadastro.CampoEmail()).should('be.visible').type('testes@testes.com')
+     cy.get(cadastro.CampoEmail()).should('be.visible').type('testes@testes.com', {delay : 2000})
      cy.wait(3000)
-     cy.get(cadastro.CampoConfirmaEmail()).should('be.visible').type('testes@testes.com')
+     cy.get(cadastro.CampoConfirmaEmail()).should('be.visible').type('testes@testes.com', {delay : 2000})
      cy.wait(3000)
      cy.get(cadastro.BotaoContinuar()).should('be.visible').click()
  }     
@@ -62,17 +62,17 @@ class TelaCadastro {
     cy.wait(3000)
     cy.get(cadastro.ValidarCampo()).should('be.visible').click()
     cy.wait(3000)
-    cy.get(cadastro.CampoCPF()).should('be.visible').type('04385040')
+    cy.get(cadastro.CampoCPF()).should('be.visible').type('04385040', {delay : 2000})
     cy.wait(3000)
     cy.get(cadastro.ValidarCampo()).should('be.visible').click()
     cy.wait(3000)
-    cy.get(cadastro.CampoCEP()).should('be.visible').type('4555')
+    cy.get(cadastro.CampoCEP()).should('be.visible').type('4555', {delay : 2000})
     cy.wait(3000)
-    cy.get(cadastro.CampoRazaoSocial()).should('be.visible').type('Empresa Devedor')
+    cy.get(cadastro.CampoRazaoSocial()).should('be.visible').type('Empresa Devedor', {delay : 2000})
     cy.wait(3000)
-    cy.get(cadastro.CampoEmail()).should('be.visible').type('testes@testes.com')
+    cy.get(cadastro.CampoEmail()).should('be.visible').type('testes@testes.com', {delay : 2000})
     cy.wait(3000)
-    cy.get(cadastro.CampoConfirmaEmail()).should('be.visible').type('testes@testes.com')
+    cy.get(cadastro.CampoConfirmaEmail()).should('be.visible').type('testes@testes.com', {delay : 2000})
     cy.wait(3000)
     cy.get(cadastro.BotaoContinuar()).should('be.visible').click()
 }     
@@ -81,7 +81,7 @@ class TelaCadastro {
     cy.wait(2000)
     cy.get ('[mask="###.###.###-##"] > :nth-child(1)').should('be.visible')
     cy.wait(2000)
-    cy.get(cadastro.PreencherRepresentante()).type('21993948830')
+    cy.get(cadastro.PreencherRepresentante()).type('21993948830',{delay : 2000} )
     cy.wait(3000)
     cy.get(cadastro.ValidarCampo()).should('be.visible').click()
     cy.wait(3000)
@@ -129,7 +129,7 @@ class TelaCadastro {
 
 
  ValidarPoliticasPrimeiroAcesso(){
-   cy.wait(5000)
+   cy.wait(3000)
     cy.get(cadastro.TituloPoliticaPrivacidade()).should('be.visible').contains('Política de Privacidade')
     cy.wait(2000)
     cy.get(cadastro.ValidarTermo()).should('be.visible')
@@ -159,18 +159,18 @@ class TelaCadastro {
       }).then((response) => {
         expect(response.status).to.equal(200);
       })
-    cy.wait(3000)  
+    cy.wait(1000)  
     cy.get(cadastro.BotaoContinuarPrimeiroAcesso()).should('be.visible').click() ;
   }
 
 
   ValidarImpressaoTermosDeUso(){
     cy.get(cadastro.ValidarTermosDeUso()).should('be.visible').contains('Termos de Uso')
-    cy.wait(3000)
+    cy.wait(2000)
     cy.get(cadastro.ValidarDocUso()).should('be.visible')
     cy.wait(2000)
     cy.get(cadastro.CheckBoxLi()).should('be.visible').click()
-    cy.wait(3000)
+    cy.wait(3000).
     cy.get(cadastro.ValidarBtnImprimir()).should('be.visible').click()
     cy.wait(2000)
     cy.request({
@@ -186,7 +186,7 @@ class TelaCadastro {
 btn_Cancelar(){
   cy.wait(3000)
   cy.get(cadastro.btn_Cancelar()).should('be.visible').click()
-  cy.wait(4000)
+  cy.wait(2000)
 }
 } 
 export default TelaCadastro

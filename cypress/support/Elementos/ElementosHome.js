@@ -14,10 +14,11 @@ class PreencherUser{
   clicar_Perfil = () => {return '.items-center > .text-center'}
   CampoMenu = () => {return '.q-menu'}
   MenuConsultaERelatorios = () => {return '[style=""] > .q-expansion-item__container > div.q-item > .q-item__section--main > .q-item__label'}
-  clicar_Carregar_duplicatas = () => {return '.q-uploader__header > .column > .q-btn > .q-btn__wrapper > .q-btn__content'}
+  clicar_Carregar_duplicatas = () => {return '.q-uploader__header > .column > .q-btn > .q-btn__wrapper'}
   Emitir = () => {'.bg-primary > .q-btn__wrapper > .q-btn__content > .block'}
   btn_Generico_Politicas_Privacidade = () => {return '.q-mt-sm > .q-btn__wrapper'}
   btn_Generico_Termos_de_uso = () => {return ':nth-child(6) > .q-btn__wrapper'}
-
+  btn_emitir = () => {return '.bg-primary > .q-btn__wrapper'}
+  ValidarNotificacao = () => {return '.q-notification'}
 
 }export default PreencherUser;

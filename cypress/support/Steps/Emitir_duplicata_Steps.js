@@ -13,6 +13,6 @@ When(/^realizo uma emissão de duplicata$/, () => {
 })
 
 Then(/^realizo uma validação para garantir a duplicata emitida$/, () => {
-  page.Tempo();
+  page.Finalizar_emitir();
 });
  
