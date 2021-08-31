@@ -20,5 +20,6 @@ class PreencherUser{
   btn_Generico_Termos_de_uso = () => {return ':nth-child(6) > .q-btn__wrapper'}
   btn_emitir = () => {return '.bg-primary > .q-btn__wrapper'}
   ValidarNotificacao = () => {return '.q-notification'}
+  Validar_Duplicata_vencida= () => {return 'tbody > tr > :nth-child(1)'}
 
 }export default PreencherUser;
