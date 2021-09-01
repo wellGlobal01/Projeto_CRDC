@@ -21,5 +21,9 @@ class PreencherUser{
   btn_emitir = () => {return '.bg-primary > .q-btn__wrapper'}
   ValidarNotificacao = () => {return '.q-notification'}
   Validar_Duplicata_vencida= () => {return 'tbody > tr > :nth-child(1)'}
+  Validar_mensagem_de_sucesso_emissão = () => {return '.q-notification__message'}
+  Validar_mensagem_de_sucesso_emissão_duplicata = () => {return '.q-notification--bottom-enter-active > .q-notification__wrapper > .q-notification__content > .q-notification__message'}
+
+  
 
 }export default PreencherUser;
