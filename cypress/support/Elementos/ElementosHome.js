@@ -23,6 +23,9 @@ class PreencherUser{
   Validar_Duplicata_vencida= () => {return 'tbody > tr > :nth-child(1)'}
   Validar_mensagem_de_sucesso_emissão = () => {return '.q-notification__message'}
   Validar_mensagem_de_sucesso_emissão_duplicata = () => {return '.q-notification--bottom-enter-active > .q-notification__wrapper > .q-notification__content > .q-notification__message'}
+  Validar_destinatário = () => {return 'tbody > tr > :nth-child(7)'}
+  Validar_coluna_destinatário = () => {return 'thead > :nth-child(1) > :nth-child(7)'}
+  Tabela_emissao = () => {return '.q-table__middle'}
 
   
 

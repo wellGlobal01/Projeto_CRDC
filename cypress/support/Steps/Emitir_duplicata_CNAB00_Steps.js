@@ -3,7 +3,7 @@
 import PageDuplicata from '../pageObjects/Emitir_duplicata_page'
 const page = new PageDuplicata
 
-Given(/^que o usuário selecione arquivo CNAB com especie de título 14$/, () => {
+Given(/^que o usuário selecione arquivo CNAB com especie de título 00$/, () => {
  page.AbrirBrowser();
  page.PreencherCampos();
 });
